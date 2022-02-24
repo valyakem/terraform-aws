@@ -1,5 +1,5 @@
 provider "aws"{
-    region = "ca_central-1"
+    region = "ca-central-1"
 }
 
 resource "aws_vpc" "main" {
