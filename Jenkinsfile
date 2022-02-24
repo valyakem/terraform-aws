@@ -34,7 +34,7 @@ pipeline {
                 )
             }
         }
-        stage('TF apply') {
+        stage('TF Apply') {
             options{
                 timeout(time: 10, unit: 'MINUTES')
                 } 
