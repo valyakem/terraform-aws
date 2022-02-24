@@ -34,7 +34,7 @@ pipeline {
                 )
             }
         }
-        stage('TF Destroy') {
+        stage('TF apply') {
             options{
                 timeout(time: 10, unit: 'MINUTES')
                 } 
@@ -44,7 +44,7 @@ pipeline {
                 }
             
             steps {
-                sh 'terraform destroy -auto-approve'
+                sh 'terraform apply -auto-approve'
                 }    
          }
     }
