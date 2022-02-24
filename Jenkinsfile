@@ -44,7 +44,8 @@ pipeline {
                 }
             
             steps {
-                sh 'terraform apply -auto-approve'
+                sh 'echo Testinging Role Assignment';
+                sh 'terraform apply -auto-approve';
                 }    
          }
     }
