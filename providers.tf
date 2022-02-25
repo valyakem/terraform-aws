@@ -9,10 +9,11 @@ resource "aws_vpc" "nb_vpc" {
   tags = {
     Name            = "NbVPC"
     Environment     = "Dev"
+    Location        = "Canada"
   }
 }
 
  #get the output
   output "vpc_cidr" {
-    value = "${aws.nb_vpc.id}"
+    value = "${aws_vpc.nb_vpc.id}"
   }
