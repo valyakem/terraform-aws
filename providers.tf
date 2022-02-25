@@ -1,12 +1,17 @@
 provider "aws" {
-    region = "${var.region}"
+    region = "us-east-1"
 }
 
-# terraform {
-#   backend "s3" {
-#     bucket          = "nbterraformbackend"
-#     key             = "terraform.tfstate"
-#     region          = "us-east-1"
-#     dynamodb_table  = "nblock-tf"
-#   }
-# }
+resource "aws_vpc" "nb_vpc" {
+  cidr_block        = "10.0.0.0/16"
+  instance_tenancy  = "default"
+
+  tags = {
+    Name            = "NbVPC"
+    Environment     = "Dev"
+  }
+
+  output "vpc_cidr" {
+    value = "${aws.nb_vpc.id}"
+  }
+}

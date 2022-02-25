@@ -17,11 +17,11 @@ pipeline {
                 }
 
         } 
-        // stage('TF Plan') {
-        //     steps {
-        //        sh 'terraform plan'     
-        //     }    
-        //  }
+        stage('TF Plan') {
+            steps {
+               sh 'terraform plan'     
+            }    
+         }
         stage ('Send Aproval Email') {
             steps {
                 mail(
