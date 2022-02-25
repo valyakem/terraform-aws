@@ -10,9 +10,9 @@ resource "aws_vpc" "nb_vpc" {
     Name            = "NbVPC"
     Environment     = "Dev"
   }
+}
 
  #get the output
   output "vpc_cidr" {
     value = "${aws.nb_vpc.id}"
   }
-}
