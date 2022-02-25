@@ -34,7 +34,7 @@ pipeline {
                 )
             }
         }
-        stage('TF Destroy') {
+        stage('TF Apply') {
             options{
                 timeout(time: 10, unit: 'MINUTES')
                 } 
@@ -45,7 +45,7 @@ pipeline {
             
             steps {
                 sh 'echo Testinging Role Assignment';
-                sh 'terraform destroy -auto-approve';
+                sh 'terraform apply -auto-approve';
                 }    
          }
     }
